@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet"
+        id="bootstrap-css">
+    <link href="style.css" rel="stylesheet">
+
+</head>
+
+<body style="padding: 0; margin: 0;">
+
+    <!------ Include the above in your HEAD tag ---------->
+
+
+    <div class="container" style="padding-top: 0; margin: 0;">
+
+
+        <!-- <center>
+            <strong>ORIGINAL</strong>
+            <br><br>
+            http://bootsnipp.com/snippets/featured/bootstrap-pricing-slider-donations<br><br>
+            <strong>REVISIONS</strong>
+            <h4>- Added jquery.ui.touch-punch.min.js from http://touchpunch.furf.com <br><br>
+                - Due to glitchy dragging, changed css to have normal sized .label on slider, but large transparent tab
+                hidden.
+            </h4>
+        </center> -->
+        <!-- <br><br> -->
+
+        <!-- START -->
+        <div class="price-box" style="padding-top: 0; margin-top: 0; width: 250px;">
+
+            <form class="" role="form" style="padding-top: 0; margin-top: 0; width: 250px;">
+
+                <div class="price-slider" style="margin-bottom: 10px;">
+                    <h5 class="great" id="label-z">Harga Properti</h5>
+                    <!-- <span></span> -->
+                    <!-- <div class="col-sm-12"> -->
+                    <!-- <div> -->
+                    <input type="text" class="form-control" aria-label="harga_rumah" aria-describedby="basic-addon1"
+                        style="font-size : 13px;  padding: 0; margin-top:10px ; width: 220px; height: 20px;"
+                        id="harga_rumah">
+                    <!-- </div> -->
+                    <!-- </div> -->
+                </div>
+
+                <div class="price-slider">
+                    <h5 class="great" id="label-z">Uang Muka</h5>
+                    <span style="margin-bottom:20px ;">&nbsp;%</span>
+
+                    <div class="col-sm-12">
+                        <div id="slider"></div>
+                    </div>
+                </div>
+
+                <div class="price-slider">
+                    <h5 class="great" id="label-z">Jangka Waktu</h5>
+                    <span style="margin-bottom:20px ;">&nbsp; Tahun</span>
+
+                    <div class="col-sm-12">
+                        <div id="slider2"></div>
+                    </div>
+                </div>
+
+
+                <div class="price-slider">
+                    <h5 class="great" id="label-z">Bagi Hasil</h5>
+                    <span style="margin-bottom:20px ;">%</span>
+                    <div class="col-sm-12">
+                        <div id="slider3"></div>
+                    </div>
+                </div>
+
+                <div class="">
+
+                    <!-- <div class="row"> -->
+                    <!-- <label for="harga_rumah" class="col-sm-6 control-label">Harga Rumah : </label>
+                        <span class="help-text">Masukkan harga rumah</span>
+                        <div class="col-sm-6">
+                            <input type="hidden" id="harga_rumah">
+                            <p class="price lead" id="harga_rumah-label" style="font-size:20px ;"></p>
+                            <span class="price">.00</span>
+                        </div> -->
+
+                    <!-- 
+                        <div class="col-sm-5">
+                            <label for="harga_rumah">Harga Rumah : </label>
+                            <span class="help-textz ">Msukkan harga rumah</span>
+                        </div>
+                        <div class="col">
+                            <b>
+                                <p class="" id="harga_rumah-label" style="font-size:20px;"></p>
+                            </b>
+                        </div>
+                        <input type="hidden" id="harga_rumah"> -->
+                    <!-- </div> -->
+
+
+                    <!-- <div class="form-group form-control-sm">
+                        <label for="harga_rumah" class="col-sm-5 control">Harga Rumah : </label>
+                        <span class="help-textz">Masukkan harga rumah</span>
+                        <div class="col-sm-5">
+                            <input type="hidden" id="harga_rumah" class="form-control">
+                            <p class="" id="harga_rumah-label" style="font-size:17px ;"></p>
+                            <br>
+                        </div>
+
+                    </div> -->
+
+                    <!--  -->
+                    <!--  -->
+                    <!--  -->
+                    <input type="hidden" id="harga_rumah" class="form-control">
+                    <input type="hidden" id="uang_muka" class="form-control">
+                    <input type="hidden" id="jangka_waktu" class="form-control">
+                    <input type="hidden" id="bunga" class="form-control">
+                    <!-- 
+                    <div class="form-group form-control-sm">
+                        <label for="harga_rumah" class="col-sm-6 control-label">Harga Rumah : </label>
+                        <span class="help-text">Properti</span>
+                        <div class="col-sm-6">
+                            <input type="hidden" id="harga_rumah" class="form-control">
+                            <p class="price lead" id="harga_rumah-label" style="font-size:21px ;"></p>
+                            <span class="price">&nbsp;</span>
+                        </div>
+                    </div>
+                    <div class="form-group form-control-sm">
+                        <label for="uang_muka" class="col-sm-6 control-label">Uang Muka : </label>
+                        <span class="help-text">Down Payment (DP)</span>
+                        <div class="col-sm-6">
+                            <input type="hidden" id="uang_muka" class="form-control">
+                            <p class="price lead" id="uang_muka-label"></p>
+                            <span class="price">%</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="jangka_waktu" class="col-sm-6 control-label">Jangka Waktu: </label>
+                        <span class="help-text">Tenor</span>
+                        <div class="col-sm-6">
+                            <input type="hidden" id="jangka_waktu" class="form-control">
+                            <p class="price lead" id="jangka_waktu-label"></p>
+                            <span class="price">Tahun</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="bunga" class="col-sm-6 control-label">Bunga: </label>
+                        <span class="help-text">Pertahun</span>
+                        <div class="col-sm-6">
+                            <input type="hidden" id="bunga" class="form-control">
+                            <p class="price lead" id="bunga-label"></p>
+                            <span class="price">%</span>
+                        </div>
+                    </div> -->
+
+
+
+
+                    <!--  -->
+                    <!--  -->
+                    <!--  -->
+
+
+                </div>
+
+                <!-- <div class="form-group">
+                    <div class="col-sm-12">
+                        <button type="submit" class="btn btn-primary btn-lg btn-block">Proceed <span
+                                class="glyphicon glyphicon-chevron-right pull-right"
+                                style="padding-right: 10px;"></span></button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <img src="http://amirolahmad.github.io/bootstrap-pricing-slider/images/payment.png"
+                            class="img-responsive payment" />
+                    </div>
+                </div> -->
+                <!-- <hr class="style"> -->
+
+                <!-- <div class="price-slider"> -->
+                <!-- <span style="margin-bottom:20px ;">Pertahun</span>
+                        <div class="col-sm-12">
+                            <div id="slider3"></div>
+                        </div> -->
+                <!-- </div> -->
+
+                <div class="form-group" style="margin: 0;padding:0 ;">
+                    <div class="price-slider" style="margin: 0;margin-right: 0;padding-right:0 ;">
+                        <h5 class="great1" id="label-z">Hasil KPR :</h5>
+                        <span style="margin-bottom:0px ;"></span>
+                        <div class="col-sm-12">
+                            <div id=""></div>
+                        </div>
+                    </div>
+                    <div class="col text-" id="result">
+                        <input type="hidden" id="total" class="form-control">
+                        <!-- <strong style="font-size: 18px;">KPR =&nbsp;</strong> -->
+                        <p class="price lead text-center" id="total-label"
+                            style="font-size:18px ; margin: 0; padding-left: 10px;"></p><br>
+                        <!-- <p class="price lead" id="total-label2"></p><br>
+                                        <p class="price lead" id="total-label3"></p><br>
+                                        <p class="price lead" id="total-label4"></p><br> -->
+                        <!-- <span class="price">.00</span> -->
+                    </div>
+                    <div class="text-center">
+
+                        <img src="logo.png" class="pt-4 mt-4" style="width:100px ;margin-top: 10px;margin-left: -20px;"
+                            alt="">
+                    </div>
+                </div>
+            </form>
+            <!-- 
+            <p class="text-center" style="padding-top:10px;font-size:12px;color:#2c3e50;font-style:italic;">2022
+                <a href="" target="_blank">izzoel</a>
+            </p> -->
+
+        </div>
+
+    </div>
+    <script src="http://code.jquery.com/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <!-- <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script> -->
+    <script src="js.js"></script>
+
+    <script>
+        /*!
+    * jQuery UI Touch Punch 0.2.3
+    *
+    * Copyright 2011–2014, Dave Furfero
+    * Dual licensed under the MIT or GPL Version 2 licenses.
+    *
+    * Depends:
+    *  jquery.ui.widget.js
+    *  jquery.ui.mouse.js
+    */
+        (function ($) {
+
+            // Detect touch support
+            $.support.touch = 'ontouchend' in document;
+
+            // Ignore browsers without touch support
+            if (!$.support.touch) {
+                return;
+            }
+
+            var mouseProto = $.ui.mouse.prototype,
+                _mouseInit = mouseProto._mouseInit,
+                _mouseDestroy = mouseProto._mouseDestroy,
+                touchHandled;
+
+            /**
+             * Simulate a mouse event based on a corresponding touch event
+             * @param {Object} event A touch event
+             * @param {String} simulatedType The corresponding mouse event
+             */
+            function simulateMouseEvent(event, simulatedType) {
+
+                // Ignore multi-touch events
+                if (event.originalEvent.touches.length > 1) {
+                    return;
+                }
+
+                event.preventDefault();
+
+                var touch = event.originalEvent.changedTouches[0],
+                    simulatedEvent = document.createEvent('MouseEvents');
+
+                // Initialize the simulated mouse event using the touch event's coordinates
+                simulatedEvent.initMouseEvent(
+                    simulatedType,    // type
+                    true,             // bubbles                    
+                    true,             // cancelable                 
+                    window,           // view                       
+                    1,                // detail                     
+                    touch.screenX,    // screenX                    
+                    touch.screenY,    // screenY                    
+                    touch.clientX,    // clientX                    
+                    touch.clientY,    // clientY                    
+                    false,            // ctrlKey                    
+                    false,            // altKey                     
+                    false,            // shiftKey                   
+                    false,            // metaKey                    
+                    0,                // button                     
+                    null              // relatedTarget              
+                );
+
+                // Dispatch the simulated event to the target element
+                event.target.dispatchEvent(simulatedEvent);
+            }
+
+            /**
+             * Handle the jQuery UI widget's touchstart events
+             * @param {Object} event The widget element's touchstart event
+             */
+            mouseProto._touchStart = function (event) {
+
+                var self = this;
+
+                // Ignore the event if another widget is already being handled
+                if (touchHandled || !self._mouseCapture(event.originalEvent.changedTouches[0])) {
+                    return;
+                }
+
+                // Set the flag to prevent other widgets from inheriting the touch event
+                touchHandled = true;
+
+                // Track movement to determine if interaction was a click
+                self._touchMoved = false;
+
+                // Simulate the mouseover event
+                simulateMouseEvent(event, 'mouseover');
+
+                // Simulate the mousemove event
+                simulateMouseEvent(event, 'mousemove');
+
+                // Simulate the mousedown event
+                simulateMouseEvent(event, 'mousedown');
+            };
+
+            /**
+             * Handle the jQuery UI widget's touchmove events
+             * @param {Object} event The document's touchmove event
+             */
+            mouseProto._touchMove = function (event) {
+
+                // Ignore event if not handled
+                if (!touchHandled) {
+                    return;
+                }
+
+                // Interaction was not a click
+                this._touchMoved = true;
+
+                // Simulate the mousemove event
+                simulateMouseEvent(event, 'mousemove');
+            };
+
+            /**
+             * Handle the jQuery UI widget's touchend events
+             * @param {Object} event The document's touchend event
+             */
+            mouseProto._touchEnd = function (event) {
+
+                // Ignore event if not handled
+                if (!touchHandled) {
+                    return;
+                }
+
+                // Simulate the mouseup event
+                simulateMouseEvent(event, 'mouseup');
+
+                // Simulate the mouseout event
+                simulateMouseEvent(event, 'mouseout');
+
+                // If the touch interaction did not move, it should trigger a click
+                if (!this._touchMoved) {
+
+                    // Simulate the click event
+                    simulateMouseEvent(event, 'click');
+                }
+
+                // Unset the flag to allow other widgets to inherit the touch event
+                touchHandled = false;
+            };
+
+            /**
+             * A duck punch of the $.ui.mouse _mouseInit method to support touch events.
+             * This method extends the widget with bound touch event handlers that
+             * translate touch events to mouse events and pass them to the widget's
+             * original mouse event handling methods.
+             */
+            mouseProto._mouseInit = function () {
+
+                var self = this;
+
+                // Delegate the touch handlers to the widget's element
+                self.element.bind({
+                    touchstart: $.proxy(self, '_touchStart'),
+                    touchmove: $.proxy(self, '_touchMove'),
+                    touchend: $.proxy(self, '_touchEnd')
+                });
+
+                // Call the original $.ui.mouse init method
+                _mouseInit.call(self);
+            };
+
+            /**
+             * Remove the touch event handlers
+             */
+            mouseProto._mouseDestroy = function () {
+
+                var self = this;
+
+                // Delegate the touch handlers to the widget's element
+                self.element.unbind({
+                    touchstart: $.proxy(self, '_touchStart'),
+                    touchmove: $.proxy(self, '_touchMove'),
+                    touchend: $.proxy(self, '_touchEnd')
+                });
+
+                // Call the original $.ui.mouse destroy method
+                _mouseDestroy.call(self);
+            };
+
+        })(jQuery);
+
+    </script>
+
+    <script>
+        var rupiah = document.getElementById('harga_rumah');
+        rupiah.addEventListener('keyup', function (e) {
+            rupiah.value = formatRupiah(this.value, 'Rp ');
+        })
+
+        function formatRupiah(angka, prefix) {
+            var number_string = angka.replace(/[^,\d]/g, '').toString(),
+                split = number_string.split(','),
+                sisa = split[0].length % 3,
+                rupiah = split[0].substr(0, sisa),
+                ribuan = split[0].substr(sisa).match(/\d{3}/gi);
+
+            if (ribuan) {
+                separator = sisa ? '.' : '';
+                rupiah += separator + ribuan.join('.');
+            }
+
+            rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
+            return prefix == undefined ? rupiah : (rupiah ? 'Rp ' + rupiah : '');
+        }
+    </script>
+
+</body>
+
+</html>
