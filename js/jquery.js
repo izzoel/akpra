@@ -96,12 +96,10 @@ function update(slider, val) {
     // $("#total-label4").text($fhitung_angsuran);
     $("#total-label").text('Rp ' + $fangsuran.replace(/\,/g, '.') + ' /bulan');
 
-//     $('#slider a').html('<label><span class="glyphicon glyphicon-chevron-left"></span> ' + $uang_muka + ' <span class="glyphicon glyphicon-chevron-right"></span></label>');
-//     $('#slider2 a').html('<label><span class="glyphicon glyphicon-chevron-left"></span> ' + $jangka_waktu + ' <span class="glyphicon glyphicon-chevron-right"></span></label>');
-//     $('#slider3 a').html('<label><span class="glyphicon glyphicon-chevron-left"></span> ' + $bunga + ' <span class="glyphicon glyphicon-chevron-right"></span></label>');
-    
-      $('#slider a').html('<label><span class="">&rsaquo;</span> ' + $uang_muka + ' <span class="">&lsaquo;</span></label>');
+    $('#slider a').html('<label><span class="glyphicon glyphicon-chevron-left"></span> ' + $uang_muka + ' <span class="glyphicon glyphicon-chevron-right"></span></label>');
     $('#slider2 a').html('<label><span class="glyphicon glyphicon-chevron-left"></span> ' + $jangka_waktu + ' <span class="glyphicon glyphicon-chevron-right"></span></label>');
     $('#slider3 a').html('<label><span class="glyphicon glyphicon-chevron-left"></span> ' + $bunga + ' <span class="glyphicon glyphicon-chevron-right"></span></label>');
+    
+  
 }
 
