@@ -105,13 +105,13 @@
             var $fharga_rumah = $("#harga_rumah").val().replace(/[^0-9]/g, "");
             var $uang_muka = $("#uang_muka").val();
             var $jangka_waktu = $("#jangka_waktu").val();
-//             var $bunga = $("#bunga").val();
-            if (!$("input[name='komersil']").is(':checked')) {
-                var $bunga = 11;
-            }
-            else{
-                var $bunga = 5;
-            }
+            var $bunga = $("#bunga").val();
+//             if (!$("input[name='komersil']").is(':checked')) {
+//                 var $bunga = 11;
+//             }
+//             else{
+//                 var $bunga = 5;
+//             }
 
             var $fharga_dp = $fharga_rumah * $uang_muka / 100;
             var $fplafon = $fharga_rumah - $fharga_dp;
