@@ -45,13 +45,13 @@
                     <div class="row">
                         <div class="col-xs-1" style="width: 150px; padding-right: 0; margin-right: 0; display: inline;">
                             <label class="">
-                                <input class="form-check-input" type="radio" name="exampleRadios" id="bunga" value="option1" checked>
+                                <input class="form-check-input" type="radio" name="komersil" id="bunga" value="option1" checked>
                                 Komersil
                             </label>
                         </div>
                         <div style="width: 150px; padding-right: 0; margin-right: 0; display: inline;">
                             <label class="">
-                                <input class="form-check-input" type="radio" name="exampleRadios" id="bunga" value="option1" checked>
+                                <input class="form-check-input" type="radio" name="subsidi" id="bunga" value="option1" checked>
                                 Subsidi
                             </label>
                         </div>
@@ -118,7 +118,13 @@
             var $fharga_rumah = $("#harga_rumah").val().replace(/[^0-9]/g, "");
             var $uang_muka = $("#uang_muka").val();
             var $jangka_waktu = $("#jangka_waktu").val();
-            var $bunga = $("#bunga").val();
+//             var $bunga = $("#bunga").val();
+            if (!$("input[name='komersil']").is(':checked')) {
+                var $bunga = 11;
+            }
+            else{
+                var $bunga = 5;
+            }
 
             var $fharga_dp = $fharga_rumah * $uang_muka / 100;
             var $fplafon = $fharga_rumah - $fharga_dp;
